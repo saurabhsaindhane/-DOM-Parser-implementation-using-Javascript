@@ -1,0 +1,68 @@
+<html>
+    <body>
+    <h1>Airplane Database (XML Parsing) ROllNo. 201133</h1>
+    <h2>Model  :</h2>
+    <h3 id="d1"></h3>
+    <h2>Made By:</h2>
+    <h3 id="d2"></h3>
+    <h2>Number of seats:</h2>
+    <h3 id="d3"></h3>
+    <h2>Engine used: </h2>
+    <h3 id="d4"></h3>
+    
+    <script>
+    var text, parser, xmlDoc,i;
+    
+    text = "<AirplaneInformation><Airplane>"+"<Id>A001</Id>"+"<Id>A002</Id>"+"<Id>A003</Id>"+"<Make>Boeing</Make>"+"<Model>747</Model>"+"<Seats>400</Seats>"+"<EngineType>Turbofan</EngineType>"+"<YearManufactured>1998</YearManufactured>"+"</Airplane></AirplaneInformation>";
+    
+    parser = new DOMParser();
+    xmlDoc = parser.parseFromString(text,"text/xml");
+    document.getElementById("d1").innerHTML =
+    xmlDoc.getElementsByTagName("Id")[0].childNodes[0].nodeValue;
+    
+    document.getElementById("d2").innerHTML =
+    xmlDoc.getElementsByTagName("Make")[0].childNodes[0].nodeValue;
+    document.getElementById("d3").innerHTML =
+    xmlDoc.getElementsByTagName("Seats")[0].childNodes[0].nodeValue;
+    document.getElementById("d4").innerHTML =
+    xmlDoc.getElementsByTagName("EngineType")[0].childNodes[0].nodeValue;
+    i = 0;
+    
+    setTimeout(f, 2000);
+    setTimeout(f2, 4000);
+   
+    setTimeout(f3, 6000);
+    setTimeout(f, 8000);
+    setTimeout(f2, 10000);
+    setTimeout(f3, 12000);
+
+    function f3() {
+        xmlDoc = parser.parseFromString(text,"text/xml");
+    document.getElementById("d1").innerHTML =
+    xmlDoc.getElementsByTagName("Id")[0].childNodes[0].nodeValue;
+    
+    document.getElementById("d2").innerHTML =
+    xmlDoc.getElementsByTagName("Make")[0].childNodes[0].nodeValue;
+    document.getElementById("d3").innerHTML =
+    xmlDoc.getElementsByTagName("Seats")[0].childNodes[0].nodeValue;
+    document.getElementById("d4").innerHTML =
+    xmlDoc.getElementsByTagName("EngineType")[0].childNodes[0].nodeValue;
+}
+function f() {
+    document.getElementById("d1").innerHTML =
+    xmlDoc.getElementsByTagName("Id")[1].childNodes[0].nodeValue;
+    document.getElementById("d2").innerHTML = "AirIndia";
+    document.getElementById("d3").innerHTML = "600";
+    document.getElementById("d4").innerHTML = "UltraPCI";
+}
+function f2() {
+    document.getElementById("d1").innerHTML =
+    xmlDoc.getElementsByTagName("Id")[2].childNodes[0].nodeValue;
+    document.getElementById("d2").innerHTML = "Indigo";
+    document.getElementById("d3").innerHTML = "200";
+    document.getElementById("d4").innerHTML = "V3746";
+}
+    </script>
+    
+    </body>
+    </html> 
